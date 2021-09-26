@@ -1,0 +1,27 @@
+{
+  "name": "restmin",
+  "version": "1.0.0",
+  "description": "A Lightweight REST API Tool for Developers",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "release": "electron-packager . Restmin --all --overwrite --icon .\\assets\\lostman.ico --out ..\\restmin_releases\\"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emrekesler/restmin.git"
+  },
+  "author": "Emre Kesler",
+  "license": "ISC",
+  "dependencies": {
+    "@popperjs/core": "^2.10.1",
+    "axios": "^0.21.4",
+    "bootstrap": "^5.1.1",
+    "electron": "^15.0.0",
+    "monaco-editor": "^0.27.0",
+    "vue": "^3.2.19"
+  },
+  "devDependencies": {
+    "electron-reloader": "^1.2.1"
+  }
+}
