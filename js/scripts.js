@@ -1,7 +1,7 @@
-let editor;
 const axios = require('axios');
 const vue = require('vue');
 const bootstrap = require('bootstrap');
+let amdRequire;
 
 const { app } = require('electron');
 
@@ -32,7 +32,7 @@ function humanFileSize (size) {
 (function () {
     const path = require('path');
     const amdLoader = require('./node_modules/monaco-editor/min/vs/loader.js');
-    const amdRequire = amdLoader.require;
+    amdRequire = amdLoader.require;
     const amdDefine = amdLoader.require.define;
 
     function uriFromPath (_path) {
@@ -50,13 +50,13 @@ function humanFileSize (size) {
     // workaround monaco-css not understanding the environment
     self.module = undefined;
 
-    amdRequire(['vs/editor/editor.main'], function () {
-        editor = monaco.editor.create(document.getElementById('container'), {
-            language: 'json',
-            automaticLayout: true,
-            theme: "vs-dark"
-        });
-    });
+    // amdRequire(['vs/editor/editor.main'], function () {
+    //     editor = monaco.editor.create(document.getElementById('container'), {
+    //         language: 'json',
+    //         automaticLayout: true,
+    //         theme: "vs-dark"
+    //     });
+    // });
 })();
 
 
